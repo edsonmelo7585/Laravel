@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Produto;
 use Illuminate\Http\Request;
 
-class categorias_controler extends Controller
+class produtos_controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class categorias_controler extends Controller
     public function index()
     {
         //
-        $categorias = Categoria::all();
-        return view('categorias.index', compact('categorias'));
+        $produtos = Produto::all();
+        return view('produtos.index', compact('produtos'));
     }
 
     /**
@@ -27,7 +28,8 @@ class categorias_controler extends Controller
     public function create()
     {
         //
-        return view('categorias.create');
+        $categorias = Categoria::all();
+        return view('produtos.create', compact('categorias'));
     }
 
     /**
@@ -38,11 +40,14 @@ class categorias_controler extends Controller
      */
     public function store(Request $request)
     {
-        // 
-        $categoria = new Categoria;
-        $categoria->nome = $request->nomeCategoria;
-        $categoria->save();
-        return redirect()->route('categorias.index');
+        //
+        $produto = new Produto;
+        $produto->nome = $request->nomeproduto;
+        $produto->estoque = $request->estoque;
+        $produto->preco = $request->preco;
+        $produto->categoria_id = $request->categoria;        
+        $produto->save();
+        return redirect()->route('produtos.index');        
     }
 
     /**
@@ -65,8 +70,9 @@ class categorias_controler extends Controller
     public function edit($id)
     {
         //
-        $categoria = Categoria::find($id);        
-        return view('categorias.edit', compact('categoria'));        
+        $produto = Produto::find($id); 
+        $categorias = Categoria::all();
+        return view('produtos.edit', compact(['produto', 'categorias']));                
     }
 
     /**
@@ -79,10 +85,13 @@ class categorias_controler extends Controller
     public function update(Request $request, $id)
     {
         //
-        $categoria = Categoria::find($id);
-        $categoria->nome = $request->nomeCategoria;
-        $categoria->save();
-        return redirect()->route('categorias.index');
+        $produto = Produto::find($id);
+        $produto->nome = $request->nomeproduto;
+        $produto->estoque = $request->estoque;
+        $produto->preco = $request->preco;
+        $produto->categoria_id = $request->categoria;        
+        $produto->save();
+        return redirect()->route('produtos.index');        
     }
 
     /**
@@ -92,12 +101,12 @@ class categorias_controler extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {        
+    {
         //
-        $categoria = Categoria::find($id);
-        if(isset($categoria)){
-            $categoria->delete();
+        $produto = Produto::find($id);
+        if(isset($produto)){
+            $produto->delete();
         }
-        return redirect()->route('categorias.index');        
+        return redirect()->route('produtos.index');                
     }
 }
