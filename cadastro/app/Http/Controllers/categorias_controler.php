@@ -92,8 +92,7 @@ class categorias_controler extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        
+    {        
         //
         $categoria = Categoria::find($id);
         if(isset($categoria)){

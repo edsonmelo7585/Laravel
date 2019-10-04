@@ -15,6 +15,5 @@
     <button type="submit" class="btn btn-success btn-sm">Salvar</button>
     <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
 </form>
-</div>       
-
+</div>      
 @endsection
