@@ -35,9 +35,10 @@
                 Por favor, insira um categoria válida.
             </div>
         </div>                               
-    </div>        
-    <button type="submit" class="btn btn-success btn-sm">Salvar</button>
-    <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
+    </div> 
+    <hr class="mb-4">           
+    <button type="submit" class="btn btn-success btn-lg">Salvar</button>
+    <button type="cancel" class="btn btn-danger btn-lg">Cancelar</button>
 </form>
 </div>    
 @endsection

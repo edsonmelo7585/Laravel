@@ -33,8 +33,11 @@
         </tbody>
         </div>
         </table>                    
-        <div class="card-footer">            
-            <a href="{{route('clientes.create')}}" class="btn btn-sm btn-primary" role="button">Novo cliente</a>
+        <div class="card-footer">
+            <hr class="mb-4">
+            <div class=text-left>            
+                <a href="{{route('clientes.create')}}" class="btn btn-sm btn-primary" role="button">Novo cliente</a>
+            </div>
         </div>
     </div>
 </div>

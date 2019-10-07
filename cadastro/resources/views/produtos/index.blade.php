@@ -31,8 +31,11 @@
         </tbody>
         </div>
         </table>                    
-        <div class="card-footer">            
-            <a href="{{route('produtos.create')}}" class="btn btn-sm btn-primary" role="button">Novo produto</a>
+        <div class="card-footer">
+            <hr class="mb-4">            
+            <div class=text-left>            
+                <a href="{{route('produtos.create')}}" class="btn btn-sm btn-primary" role="button">Novo produto</a>
+            </div>
         </div>
     </div>
 </div>
