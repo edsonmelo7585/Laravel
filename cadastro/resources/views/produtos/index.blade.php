@@ -19,7 +19,7 @@
                 <td>{{$produto->nome}}</td>
                 <td>{{$produto->estoque}}</td>
                 <td>                    
-                    <form action="{{route('produtos.destroy', $produto->id)}}" method="POST" onsubmit="confirm('Tem certeza que deseja excluir?')">
+                    <form action="{{route('produtos.destroy', $produto->id)}}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir?');">
                         @csrf
                         @method('DELETE')                                                
                         <a href="{{route('produtos.edit', $produto->id)}}" class="btn btn-sm btn-primary" role="button">Editar</a>

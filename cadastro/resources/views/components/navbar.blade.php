@@ -10,7 +10,10 @@
         </li>
         <li class="{{request()->routeIs('produtos.index') ? 'nav-item active' : 'nav-item'}}">
           <a class="nav-link" href="{{route('produtos.index')}}">produtos</a>
-        </li>        
+        </li>
+        <li class="{{request()->routeIs('clientes.index') ? 'nav-item active' : 'nav-item'}}">
+          <a class="nav-link" href="{{route('clientes.index')}}">clientes</a>
+        </li>                
         <li class="{{request()->routeIs('categorias.index') ? 'nav-item active' : 'nav-item'}}">
         <a class="nav-link" href="{{route('categorias.index')}}">categorias</a>
         </li>

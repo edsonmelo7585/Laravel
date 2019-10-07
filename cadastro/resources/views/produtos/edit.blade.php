@@ -29,10 +29,10 @@
             <select class="custom-select d-block w-100" id="categoria" name="categoria" required>
                 <option value="{{$produto->categoria_id}}">Escolha...</option>
                 @foreach ($categorias as $categoria)
-                <option value="{{ $categoria->id }}" {{ ( $categoria->id == $produto->categoria_id) ? 'selected' : '' }}> 
-                    {{$categoria->nome}} 
-                </option>
-              @endforeach                
+                    <option value="{{ $categoria->id }}" {{ ( $categoria->id == $produto->categoria_id) ? 'selected' : '' }}> 
+                        {{$categoria->nome}} 
+                    </option>
+                @endforeach                
             </select>
             <div class="invalid-feedback">
                 Por favor, insira um categoria válida.

@@ -21,7 +21,7 @@
                 <td>                    
                     {{-- <a href="{{route('categorias.edit', $categoria->id)}}" class="btn btn-sm btn-primary" role="button">Editar</a>
                     <a href="javascript:func()" class="btn btn-sm btn-danger" role="button" onclick="confirmacao('{{$categoria->id}}')">Apagar</a> --}}
-                    <form action="{{route('categorias.destroy', $categoria->id)}}" method="POST" onsubmit="confirm('Tem certeza que deseja excluir?')">
+                    <form action="{{route('categorias.destroy', $categoria->id)}}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir?');">
                         @csrf
                         @method('DELETE')                                                
                         <a href="{{route('categorias.edit', $categoria->id)}}" class="btn btn-sm btn-primary" role="button">Editar</a>

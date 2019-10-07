@@ -134,6 +134,7 @@ class ComposerStaticInit4a2060a65719f91d8bf569890f8f2467
         ),
         'A' => 
         array (
+            'App\\Models\\' => 11,
             'App\\' => 4,
         ),
     );
@@ -361,6 +362,10 @@ class ComposerStaticInit4a2060a65719f91d8bf569890f8f2467
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'App\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/models',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -400,7 +405,8 @@ class ComposerStaticInit4a2060a65719f91d8bf569890f8f2467
     );
 
     public static $classMap = array (
-        'App\\Categoria' => __DIR__ . '/../..' . '/app/Categoria.php',
+        'App\\Categoria' => __DIR__ . '/../..' . '/app/models/Categoria.php',
+        'App\\Clientes' => __DIR__ . '/../..' . '/app/models/Clientes.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -409,9 +415,10 @@ class ComposerStaticInit4a2060a65719f91d8bf569890f8f2467
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\categorias_controler' => __DIR__ . '/../..' . '/app/Http/Controllers/categorias_controler.php',
-        'App\\Http\\Controllers\\home_controler' => __DIR__ . '/../..' . '/app/Http/Controllers/home_controler.php',
-        'App\\Http\\Controllers\\produtos_controler' => __DIR__ . '/../..' . '/app/Http/Controllers/produtos_controler.php',
+        'App\\Http\\Controllers\\categorias_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/categorias_controller.php',
+        'App\\Http\\Controllers\\clientes_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/clientes_controller.php',
+        'App\\Http\\Controllers\\home_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/home_controller.php',
+        'App\\Http\\Controllers\\produtos_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/produtos_controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -420,13 +427,15 @@ class ComposerStaticInit4a2060a65719f91d8bf569890f8f2467
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Produto' => __DIR__ . '/../..' . '/app/Produto.php',
+        'App\\Produto' => __DIR__ . '/../..' . '/app/models/Produto.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\User' => __DIR__ . '/../..' . '/app/models/User.php',
+        'App\\models\\cidades' => __DIR__ . '/../..' . '/app/models/cidades.php',
+        'App\\models\\estados' => __DIR__ . '/../..' . '/app/models/estados.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
