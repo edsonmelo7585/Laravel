@@ -11,7 +11,7 @@ class ControladorProduto extends Controller
     {
         return view('produtos');
     }
-    
+
     public function index()
     {
         $prods = Produto::all();
@@ -55,7 +55,7 @@ class ControladorProduto extends Controller
     {
         $prod = Produto::find($id);
         if (isset($prod)) {
-            return json_encode($prod);            
+            return json_encode($prod);
         }
         return response('Produto não encontrado', 404);
     }

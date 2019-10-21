@@ -8,6 +8,12 @@ use App\Categoria;
 
 class ControladorCategoria extends Controller
 {
+    public function indexView()
+    {
+        // $cats = Categoria::all();
+        // return $cats->toJson();
+        return view('categorias');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,10 +21,10 @@ class ControladorCategoria extends Controller
      */
     public function index()
     {
-        $cats = Categoria::all();
-        return view('categorias', compact('cats'));
+        $categorias = Categoria::all();
+        // return view('categorias', compact('cats'));
+        return $categorias->toJson();
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +32,7 @@ class ControladorCategoria extends Controller
      */
     public function create()
     {
-        return view('novacategoria');
+        // return view('novacategoria');
     }
 
     /**
@@ -37,10 +43,10 @@ class ControladorCategoria extends Controller
      */
     public function store(Request $request)
     {
-        $cat = new Categoria();
-        $cat->nome = $request->input('nomeCategoria');
-        $cat->save();
-        return redirect('/categorias');
+        $categoria = new Categoria();
+        $categoria->nome = $request->input('nome');
+        $categoria->save();
+        return json_encode($categoria);
     }
 
     /**
@@ -52,6 +58,11 @@ class ControladorCategoria extends Controller
     public function show($id)
     {
         //
+        $categoria = Categoria::find($id);
+        if (isset($categoria)) {
+            return json_encode($categoria);
+        }
+        return response('categria não encontrada', 404);
     }
 
     /**
@@ -62,11 +73,11 @@ class ControladorCategoria extends Controller
      */
     public function edit($id)
     {
-        $cat = Categoria::find($id);
-        if(isset($cat)) {
-            return view('editarcategoria', compact('cat'));
-        }
-        return redirect('/categorias');
+        // $cat = Categoria::find($id);
+        // if(isset($cat)) {
+        //     return view('editarcategoria', compact('cat'));
+        // }
+        // return redirect('/categorias');
     }
 
     /**
@@ -78,12 +89,14 @@ class ControladorCategoria extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cat = Categoria::find($id);
-        if(isset($cat)) {
-            $cat->nome = $request->input('nomeCategoria');
-            $cat->save();
+        $categoria = Categoria::find($id);
+        if(isset($categoria)) {
+            $categoria->nome = $request->input('nome');
+            $categoria->save();
+            return json_encode($categoria);
         }
-        return redirect('/categorias');
+        // return redirect('/categorias');
+        return response('Categoria não encontrada', 404);
     }
 
     /**
@@ -94,17 +107,12 @@ class ControladorCategoria extends Controller
      */
     public function destroy($id)
     {
-        $cat = Categoria::find($id);
-        if (isset($cat)) {
-            $cat->delete();
+        $categoria = Categoria::find($id);
+        if (isset($categoria)) {
+            $categoria->delete();
+            return response('OK', 200);
         }
-        return redirect('/categorias');
-    }
-
-    public function indexJson()
-    {
-        $cats = Categoria::all();
-        return json_encode($cats);
+        return response('Categoria não encontrada', 404);
     }
 }
 
